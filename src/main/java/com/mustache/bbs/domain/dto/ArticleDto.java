@@ -1,6 +1,7 @@
 package com.mustache.bbs.domain.dto;
 
 
+import com.mustache.bbs.domain.entity.Article;
 import lombok.Getter;
 
 @Getter
@@ -18,6 +19,9 @@ public class ArticleDto {
     @Override
     public String toString(){
         return this.content + " " + this.id + " " + this.title;
+    }
+    public Article toEntity(){
+        return new Article(title,content);
     }
 
 }
