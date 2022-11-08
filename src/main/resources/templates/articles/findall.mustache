@@ -1,13 +1,25 @@
 {{>layouts/header}}
-<div>
-    {{#list}}
-        id : {{id}}
-        title : {{title}}
-        contents : {{contents}}
-        <br>
 
-    {{/list}}
-    이 페이지는 list 입니다.
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#list}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{title}}</td>
+            <td>{{contents}} <br></td>
+        </tr>
+        {{/list}}
+        </tbody>
+    </table>
+
 </div>
 
 {{>layouts/footer}}
