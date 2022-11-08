@@ -9,18 +9,22 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value="/articles")
 @Slf4j
 public class ArticleController {
-
+    //스프링이 articleRepo 구현체(articleDao)를 DI (인터페이스가 아님)
+    //기능 ; findbyid, save .. 등
     private final ArticleRepository articleRepository;
     public ArticleController(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
-
-
+    @GetMapping(value = "/main")
+    public String gotoMain(){
+        return "articles/main";
+    }
     @GetMapping(value = "/ex")
     public String exTemplate(@RequestParam String name,Model model){
         model.addAttribute("name",name);
@@ -29,12 +33,11 @@ public class ArticleController {
     @GetMapping(value = "/delete")
     public String deleteAll(){
         articleRepository.deleteAll();
-        return "/articles/new";
+        return "articles/new";
     }
     @GetMapping(value= "/findall")
     public String findAll() {
         List<Article> list = articleRepository.findAll();
-
         return "articles/findall";
     }
     @GetMapping(value = "/new")
@@ -48,6 +51,17 @@ public class ArticleController {
         articleRepository.save(article);
         log.info("insert 성공");
         return "articles/new";
+    }
+
+    @GetMapping("/{id}")
+    public String selectSingle(@PathVariable Long id, Model model){
+        Optional<Article> optional = articleRepository.findById(id);
+        if(!optional.isEmpty()){
+            model.addAttribute("article",optional.get());
+            return "show";
+        }else{
+            return "error";
+        }
     }
 
 }
