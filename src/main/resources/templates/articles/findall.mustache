@@ -1,5 +1,13 @@
 {{>layouts/header}}
-{{name}} {{title}} {{contents}}
+<div>
+    {{#list}}
+        id : {{id}}
+        title : {{title}}
+        contents : {{contents}}
+        <br>
 
+    {{/list}}
+    이 페이지는 list 입니다.
+</div>
 
 {{>layouts/footer}}

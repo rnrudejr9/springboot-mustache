@@ -35,9 +35,10 @@ public class ArticleController {
         articleRepository.deleteAll();
         return "articles/new";
     }
-    @GetMapping(value= "/findall")
-    public String findAll() {
+    @GetMapping(value= "/list")
+    public String findAll(Model model) {
         List<Article> list = articleRepository.findAll();
+        model.addAttribute("list",list);
         return "articles/findall";
     }
     @GetMapping(value = "/new")
@@ -47,10 +48,9 @@ public class ArticleController {
     @PostMapping(value="/posts")
     public String createArticle(ArticleDto form){
         log.info(form.toString());
-        Article article = form.toEntity();
-        articleRepository.save(article);
-        log.info("insert 성공");
-        return "articles/new";
+
+        Article article = articleRepository.save(form.toEntity());
+        return String.format("redirect:/articles/%d",article.getId());
     }
 
     @GetMapping("/{id}")
@@ -62,6 +62,10 @@ public class ArticleController {
         }else{
             return "error";
         }
+    }
+    @GetMapping("")
+    public String index(){
+        return "redirect:/articles/list";
     }
 
 }
