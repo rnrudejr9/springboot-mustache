@@ -10,17 +10,17 @@
 
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/articles/main">Mainpage</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                 <a class="nav-link active" aria-current="page" href="#" type="submit ">Home</a>
+                 <a class="nav-link active" aria-current="page" href="/articles/main" type="submit ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="/articles/new">ADD</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +45,30 @@
     </div>
 </nav>
 
-<form action="/articles/new" method="get">
-    <button type="submit" class="btn btn-info">DAO 페이지</button>
-</form>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <td>
+                <form action="/articles/new" method="get">
+                    <button type="submit" class="btn btn-info">DAO 페이지</button>
+                </form>
+            </td>
 
+            <td>
+                <form class="container2" action="/articles/delete" method="get">
+                    <button type="submit" class="btn btn-danger">데이터 전체삭제</button>
+                </form>
+            </td>
+
+            <td>
+                <form class="container2" action="/articles/list" method="get">
+                    <button type="submit" class="btn btn-success">데이터 전체호출</button>
+                </form>
+            </td>
+        </tr>
+        </thead>
+
+    </table>
+
+</div>

@@ -25,11 +25,7 @@ public class ArticleController {
     public String gotoMain(){
         return "articles/main";
     }
-    @GetMapping(value = "/ex")
-    public String exTemplate(@RequestParam String name,Model model){
-        model.addAttribute("name",name);
-        return "templateEx";
-    }
+
     @GetMapping(value = "/delete")
     public String deleteAll(){
         articleRepository.deleteAll();

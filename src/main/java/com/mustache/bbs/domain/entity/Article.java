@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Getter
 public class Article {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
     private String title;

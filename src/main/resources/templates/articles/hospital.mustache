@@ -1,0 +1,33 @@
+{{>layouts/header}}
+
+<div>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Contents</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#list}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{openServiceName}}</a></td>
+                <td>{{openLocalGovernmentCode}} <br></td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+        {{/list}}
+        </tbody>
+    </table>
+
+</div>
+
+{{>layouts/footer}}
