@@ -64,4 +64,17 @@ public class ArticleController {
         return "redirect:/articles/list";
     }
 
+    @PutMapping("/{id}")
+    public String updateTitle(@PathVariable Long id, Model model){
+        Optional<Article> optional =articleRepository.findById(id);
+        optional.get().setTitle("updateQ");
+        articleRepository.save(optional.get());
+        if(!optional.isEmpty()){
+            model.addAttribute("article",optional.get());
+            return "show";
+        }else{
+            return "error";
+        }
+    }
+
 }
