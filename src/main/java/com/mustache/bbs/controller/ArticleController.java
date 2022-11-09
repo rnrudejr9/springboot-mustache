@@ -31,6 +31,13 @@ public class ArticleController {
         articleRepository.deleteAll();
         return "articles/new";
     }
+    @GetMapping(value="/{id}/delete")
+    public String delete(@PathVariable Long id){
+        Optional<Article> optional = articleRepository.findById(id);
+        Article article = optional.get();
+        articleRepository.delete(article);
+        return "articles/new";
+    }
     @GetMapping(value= "/list")
     public String findAll(Model model) {
         List<Article> list = articleRepository.findAll();

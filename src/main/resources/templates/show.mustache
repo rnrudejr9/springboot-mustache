@@ -2,8 +2,20 @@
 <div>
     {{#article}}
         {{id}} {{title}} {{contents}}
-    {{/article}}
+
     이 페이지는 show 입니다.
 </div>
+
+<td>
+    <form action="/articles/{{id}}/edit" method="get">
+        <button type="submit" class="btn btn-warning">데이터 수정</button>
+    </form>
+</td>
+        <td>
+            <form action="/articles/{{id}}/delete" method="get">
+                <button type="submit" class="btn btn-danger">데이터 삭제</button>
+            </form>
+        </td>
+    {{/article}}
 
 {{>layouts/footer}}
