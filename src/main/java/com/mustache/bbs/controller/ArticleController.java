@@ -44,7 +44,6 @@ public class ArticleController {
     @PostMapping(value="/posts")
     public String createArticle(ArticleDto form){
         log.info(form.toString());
-
         Article article = articleRepository.save(form.toEntity());
         return String.format("redirect:/articles/%d",article.getId());
     }
@@ -59,19 +58,23 @@ public class ArticleController {
             return "error";
         }
     }
-    @GetMapping("")
-    public String index(){
-        return "redirect:/articles/list";
+
+    @PostMapping ("/{id}")
+    public String updateQuery(ArticleDto form,Model model){
+        Article article = form.toEntity();
+        articleRepository.save(article);
+        log.info(article.getId() + " " +article.getTitle());
+        model.addAttribute("article",article);
+        return "show";
     }
 
-    @PutMapping("/{id}")
+    @GetMapping("/{id}/edit")
     public String updateTitle(@PathVariable Long id, Model model){
         Optional<Article> optional =articleRepository.findById(id);
-        optional.get().setTitle("updateQ");
-        articleRepository.save(optional.get());
+        log.info(optional.get().getTitle());
         if(!optional.isEmpty()){
             model.addAttribute("article",optional.get());
-            return "show";
+            return "articles/edit";
         }else{
             return "error";
         }

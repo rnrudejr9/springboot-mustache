@@ -1,0 +1,27 @@
+{{>layouts/header}}
+
+{{#article}}
+<form class="container" action="/articles/{{id}}" method="post">
+    <div class="mb-3">
+        <label class="form-label">id</label>
+        <textarea type="text" class="form-control" name="id"> {{id}} </textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">수정할 제목</label>
+        <textarea class="form-control" rows="3" name="title">{{title}}</textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">수정할 내용</label>
+        <textarea class="form-control" rows="3" name="content">{{contents}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+{{/article}}
+
+
+
+
+{{>layouts/footer}}
