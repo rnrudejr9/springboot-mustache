@@ -23,11 +23,11 @@ public class Article {
     @Column
     private String title;
     @Column
-    private String contents;
+    private String content;
 
 
-    public Article(String title, String contents) {
+    public Article(String title, String content) {
         this.title = title;
-        this.contents = contents;
+        this.content = content;
     }
 }
