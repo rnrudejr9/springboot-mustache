@@ -32,11 +32,10 @@ public class ArticleController {
         return "articles/new";
     }
     @GetMapping(value="/{id}/delete")
-    public String delete(@PathVariable Long id){
-        Optional<Article> optional = articleRepository.findById(id);
-        Article article = optional.get();
-        articleRepository.delete(article);
-        return "articles/new";
+    public String delete(@PathVariable Long id,Model model){
+        articleRepository.deleteById(id);
+        model.addAttribute("msg","정상적인 삭제");
+        return "redirect:/articles/list";
     }
     @GetMapping(value= "/list")
     public String findAll(Model model) {
