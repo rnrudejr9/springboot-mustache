@@ -14,39 +14,39 @@ import java.util.Date;
 @Entity
 @NoArgsConstructor
 @Getter
-@Table(name="nation_wide_hospitals")
+@Table(name="nation_wide_hospitals2")
 public class Hospital {
     @Id
     private Integer id;
     @Column
     private String openServiceName;
-    @Column
-    private int openLocalGovernmentCode;
-    @Column
-    private String managementNumber;
-    @Column
-    private LocalDateTime licenseDate;
-    @Column
-    private int businessStatus;
-    @Column
-    private int businessStatusCode;
-    @Column
-    private String phone;
-    @Column
-    private String fullAddress;
-    @Column
-    private String roadNameAddress;
-    @Column
-    private String hospitalName;
-    @Column
-    private String businessTypeName;
-    @Column
-    private int healthcareProviderCount;
-    @Column
-    private int patientRoomCount;
-    @Column
-    private int totalNumberOfBeds;
-    @Column
-    private float totalAreaSize;
+//    @Column
+//    private int openLocalGovernmentCode;
+//    @Column
+//    private String managementNumber;
+//    @Column
+//    private LocalDateTime licenseDate;
+//    @Column
+//    private int businessStatus;
+//    @Column
+//    private int businessStatusCode;
+//    @Column
+//    private String phone;
+//    @Column
+//    private String fullAddress;
+//    @Column
+//    private String roadNameAddress;
+//    @Column
+//    private String hospitalName;
+//    @Column
+//    private String businessTypeName;
+//    @Column
+//    private int healthcareProviderCount;
+//    @Column
+//    private int patientRoomCount;
+//    @Column
+//    private int totalNumberOfBeds;
+//    @Column
+//    private float totalAreaSize;
 
 }
