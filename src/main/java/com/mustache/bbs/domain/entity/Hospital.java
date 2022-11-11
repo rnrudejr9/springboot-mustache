@@ -18,7 +18,7 @@ import java.util.Date;
 public class Hospital {
     @Id
     private Integer id;
-    @Column
+    @Column(name = "open_service_name")
     private String openServiceName;
 //    @Column
 //    private int openLocalGovernmentCode;
