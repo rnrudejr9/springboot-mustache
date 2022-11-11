@@ -21,10 +21,6 @@ public class ArticleController {
     public ArticleController(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
-    @GetMapping(value = "/main")
-    public String gotoMain(){
-        return "articles/main";
-    }
 
     @GetMapping(value = "/delete")
     public String deleteAll(){
