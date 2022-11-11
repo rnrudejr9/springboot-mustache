@@ -31,12 +31,19 @@ public class ArticleController {
         articleRepository.deleteAll();
         return "articles/new";
     }
+
+    //@REquestParam /index=1&page=2 변수가 여러개를 다루고 싶을때 <- 을 사용해야되나요
+    //@Pathvariable  /3 이런식
+    //모텔에서 veiw로 데이터를 전달하는데 저희가 만들고 있는 view
+    //null 값 넣을때 id 값을 추가했는지
+
     @GetMapping(value="/{id}/delete")
     public String delete(@PathVariable Long id,Model model){
         articleRepository.deleteById(id);
         model.addAttribute("msg","정상적인 삭제");
         return "redirect:/articles/list";
     }
+
     @GetMapping(value= "/list")
     public String findAll(Model model) {
         List<Article> list = articleRepository.findAll();
