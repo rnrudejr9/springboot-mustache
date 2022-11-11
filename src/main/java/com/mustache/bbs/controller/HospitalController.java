@@ -1,6 +1,5 @@
 package com.mustache.bbs.controller;
 
-import com.mustache.bbs.domain.entity.Article;
 import com.mustache.bbs.domain.entity.Hospital;
 import com.mustache.bbs.domain.repository.HospitalRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -12,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @RequestMapping(value="/hospital")
 @Controller
@@ -31,8 +28,9 @@ public class HospitalController {
         return hospitalRepository.findAll(pageable);
     }
     @RequestMapping("/all")
-    public String hospital(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model){
+    public String hospitalShow(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model){
         Page<Hospital> list =hospitalRepository.findAll(pageable);
+        log.info("hello222");
         model.addAttribute("list",list);
         model.addAttribute("previous",pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next",pageable.next().getPageNumber());

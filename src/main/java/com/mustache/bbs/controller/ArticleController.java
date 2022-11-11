@@ -60,6 +60,7 @@ public class ArticleController {
     @GetMapping("/{id}")
     public String selectSingle(@PathVariable Long id, Model model){
         Optional<Article> optional = articleRepository.findById(id);
+        log.info("hello");
         if(!optional.isEmpty()){
             model.addAttribute("article",optional.get());
             return "show";
