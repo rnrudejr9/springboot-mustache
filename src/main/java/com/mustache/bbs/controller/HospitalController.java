@@ -13,6 +13,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RequestMapping(value="/hospital")
 @Controller
 @Slf4j
@@ -39,8 +42,10 @@ public class HospitalController {
     }
 
     @RequestMapping("/{road}")
-    public String findByValue(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model, @RequestParam String road){
-        return "";
+    public List<Hospital> findByValue(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model, @RequestParam String road){
+
+
+        return new ArrayList<>();
 
     }
 }
