@@ -58,5 +58,16 @@ class HospitalRepositoryTest {
             System.out.println(hospital.getHospitalName());
         }
     }
+    @Test
+    void findByPatientRoomCountBetween(){
+        List<Hospital> hospitals = hospitalRepository.findByPatientRoomCountBetween(8, 20);
+        print(hospitals);
+    }
+
+    void print(List<Hospital> hospitals){
+        for(var hospital : hospitals){
+            System.out.println(hospital.getHospitalName() + " " + hospital.getPatientRoomCount());
+        }
+    }
 
 }
