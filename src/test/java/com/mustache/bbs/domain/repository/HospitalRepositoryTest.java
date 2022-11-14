@@ -60,7 +60,7 @@ class HospitalRepositoryTest {
     }
     @Test
     void findByPatientRoomCountBetween(){
-        List<Hospital> hospitals = hospitalRepository.findByPatientRoomCountBetween(8, 20);
+        List<Hospital> hospitals = hospitalRepository.findByPatientRoomCountBetweenOrderByPatientRoomCountDesc(8, 20);
         print(hospitals);
     }
 
