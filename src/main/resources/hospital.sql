@@ -1,0 +1,1 @@
+select * from nation_wide_hospitals where hospital_name like '%피부과%';

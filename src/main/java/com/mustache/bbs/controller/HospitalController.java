@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @RequestMapping(value="/hospital")
 @Controller
@@ -35,5 +36,11 @@ public class HospitalController {
         model.addAttribute("previous",pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next",pageable.next().getPageNumber());
         return "articles/hospital";
+    }
+
+    @RequestMapping("/{road}")
+    public String findByValue(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model, @RequestParam String road){
+        return "";
+
     }
 }
