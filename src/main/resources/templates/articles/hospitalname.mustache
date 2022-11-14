@@ -1,0 +1,48 @@
+{{>layouts/header}}
+
+<div>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">서비스이름</th>
+            <th scope="col">지역번호</th>
+            <th scope="col">관리번호</th>
+            <th scope="col">라이센스날짜</th>
+            <th scope="col">영업상태</th>
+            <th scope="col">영업코드</th>
+            <th scope="col">전화번호</th>
+            <th scope="col">전체주소</th>
+            <th scope="col">도로주소</th>
+            <th scope="col">병원이름</th>
+            <th scope="col">기업정보</th>
+            <th scope="col">의료인수</th>
+            <th scope="col">병동수</th>
+            <th scope="col">전체침구수</th>
+            <th scope="col">면적</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#list}}
+            <tr>
+                <th scope="row">{{business_type_name}}</th>
+                <td>{{hospital_name}}</a></td>
+                <td>{{road_name_address}}</a></td>
+            </tr>
+        {{/list}}
+        </tbody>
+    </table>
+
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="?page={{previous}}"    >
+            Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="?page={{next}}">
+            Next</a>
+        </li>
+    </ul>
+
+</div>
+
+{{>layouts/footer}}

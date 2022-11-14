@@ -42,10 +42,15 @@ public class HospitalController {
     }
 
     @RequestMapping("/{road}")
-    public List<Hospital> findByValue(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model, @RequestParam String road){
+    public String findByValue(@PageableDefault(size=10,sort="id",direction = Sort.Direction.DESC) Pageable pageable, Model model, @RequestParam String road){
+        List<String> inClues = new ArrayList<>();
+        inClues.add("보건소");
+        inClues.add("보건지소");
+        inClues.add("보건진료소");
+        List<Hospital> hospitals = hospitalRepository.findByBusinessTypeNameIn(inClues);
 
-
-        return new ArrayList<>();
+        model.addAttribute(hospitals);
+        return "articles/hospitalname";
 
     }
 }
