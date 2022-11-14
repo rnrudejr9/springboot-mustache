@@ -1,1 +1,1 @@
-select * from nation_wide_hospitals where hospital_name like '%피부과%';
+select * from nation_wide_hospitals where hospital_name like '%피부과%' and road_name_address like "경기도 수원시%";
