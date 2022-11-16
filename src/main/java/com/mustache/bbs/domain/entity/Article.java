@@ -26,11 +26,11 @@ public class Article {
     @Column
     private String content;
 
-
     public Article(String title, String content) {
         this.title = title;
         this.content = content;
     }
+
     public static ArticleDto of(Article article){
         return new ArticleDto(article.id, article.title, article.content);
     }
