@@ -31,6 +31,12 @@ public class Article {
         this.content = content;
     }
 
+    public Article(Long id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
+
     public static ArticleDto of(Article article){
         return new ArticleDto(article.id, article.title, article.content);
     }

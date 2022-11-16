@@ -22,5 +22,9 @@ public class ArticleService {
         return articleDto;
     }
 
+    public ArticleAddResponse add(ArticleRequest dto){
+
+    }
+
 
 }

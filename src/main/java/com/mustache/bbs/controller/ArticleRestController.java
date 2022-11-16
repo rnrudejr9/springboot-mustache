@@ -5,10 +5,7 @@ import com.mustache.bbs.domain.dto.ArticleDto;
 import com.mustache.bbs.domain.dto.HospitalResponse;
 import com.mustache.bbs.service.ArticleService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/articles")
@@ -24,5 +21,11 @@ public class ArticleRestController {
         ArticleDto articleDto = articleService.getArticle(id);
         return ResponseEntity.ok().body(articleDto); //RETrun : DTO
     }
+
+    @PostMapping(value = "/member")
+    public String postArticle(){
+        return "";
+    }
+
 
 }
