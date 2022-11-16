@@ -1,11 +1,15 @@
 package com.mustache.bbs.domain.dto;
 
 import com.mustache.bbs.domain.entity.Hospital;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class HospitalResponse {
     private Integer id;
     private String roadNameAddress;

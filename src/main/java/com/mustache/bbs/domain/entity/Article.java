@@ -1,6 +1,7 @@
 package com.mustache.bbs.domain.entity;
 
 
+import com.mustache.bbs.domain.dto.ArticleDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,5 +30,8 @@ public class Article {
     public Article(String title, String content) {
         this.title = title;
         this.content = content;
+    }
+    public static ArticleDto of(Article article){
+        return new ArticleDto(article.id, article.title, article.content);
     }
 }

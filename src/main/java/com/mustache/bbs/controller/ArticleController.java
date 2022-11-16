@@ -2,7 +2,7 @@ package com.mustache.bbs.controller;
 
 import com.mustache.bbs.domain.dto.ArticleDto;
 import com.mustache.bbs.domain.entity.Article;
-import com.mustache.bbs.domain.repository.ArticleRepository;
+import com.mustache.bbs.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
