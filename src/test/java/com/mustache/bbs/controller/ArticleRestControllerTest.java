@@ -1,6 +1,10 @@
 package com.mustache.bbs.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mustache.bbs.domain.dto.ArticleDto;
+import com.mustache.bbs.domain.dto.ArticleRequestDto;
+import com.mustache.bbs.domain.dto.ArticleResponseDto;
 import com.mustache.bbs.domain.entity.Article;
 import com.mustache.bbs.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -16,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,6 +34,9 @@ class ArticleRestControllerTest {
 
     @MockBean
     ArticleService articleService;
+
+    @Autowired
+    ObjectMapper objectMapper;
 
     @Test
     @DisplayName("아이디 조회해서 데이터 값 받아지는가?")
