@@ -28,4 +28,9 @@ public class HospitalService {
         }
         return hospitalResponse;
     }
+
+    public HospitalResponse addHospital(Hospital hospital){
+        hospitalRepository.save(hospital);
+        return new HospitalResponse();
+    }
 }

@@ -21,4 +21,6 @@ public class HospitalRestController {
         HospitalResponse hospitalResponse = hospitalService.getHospital(id);
         return ResponseEntity.ok().body(hospitalResponse); //RETrun : DTO
     }
+
+
 }
