@@ -18,5 +18,8 @@ public class User {
     private String userName;
     private String password;
     private String emailAddress;
+
+    public void ifPresent(Object o) {
+    }
 }
 

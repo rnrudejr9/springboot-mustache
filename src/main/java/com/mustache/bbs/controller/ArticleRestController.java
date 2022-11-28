@@ -1,9 +1,7 @@
 package com.mustache.bbs.controller;
 
 
-import com.mustache.bbs.domain.dto.ArticleDto;
-import com.mustache.bbs.domain.dto.ArticleResponseDto;
-import com.mustache.bbs.domain.dto.HospitalResponse;
+import com.mustache.bbs.domain.dto.article.ArticleDto;
 import com.mustache.bbs.service.ArticleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

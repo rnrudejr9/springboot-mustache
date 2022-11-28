@@ -1,9 +1,7 @@
 package com.mustache.bbs.service;
 
 
-import com.mustache.bbs.domain.dto.ArticleDto;
-import com.mustache.bbs.domain.dto.ArticleRequestDto;
-import com.mustache.bbs.domain.dto.ArticleResponseDto;
+import com.mustache.bbs.domain.dto.article.ArticleDto;
 import com.mustache.bbs.domain.entity.Article;
 import com.mustache.bbs.repository.ArticleRepository;
 import org.springframework.stereotype.Service;

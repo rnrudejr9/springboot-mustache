@@ -1,13 +1,12 @@
 package com.mustache.bbs.domain.entity;
 
 
-import com.mustache.bbs.domain.dto.ArticleDto;
+import com.mustache.bbs.domain.dto.article.ArticleDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 
 //GeneratedValue : auto increasement
