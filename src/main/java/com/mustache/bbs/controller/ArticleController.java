@@ -52,7 +52,6 @@ public class ArticleController {
     }
     @PostMapping(value="/posts")
     public String createArticle(ArticleDto form){
-        log.info(form.toString());
         Article article = articleRepository.save(form.toEntity());
         return String.format("redirect:/articles/%d",article.getId());
     }

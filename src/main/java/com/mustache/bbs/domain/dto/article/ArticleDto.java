@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArticleDto {
-    private String content;
     private Long id;
+    private String content;
     private String title;
 
     public ArticleDto(Long id, String title, String content) {

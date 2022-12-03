@@ -1,18 +1,23 @@
 package com.mustache.bbs.domain.dto.user;
 
+import com.mustache.bbs.domain.entity.User;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Getter
+
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@Getter
 public class UserDto {
-    private Integer id;
+
+    private Long id;
     private String userName;
     private String password;
-    private UserRole userRole;
+    private String emailAddress;
 
 
-    public static UserDto fromEntity(User entity) {
-        return new UserDto(entity.getId(), entity.getUserName(), entity.getPassword(), entity.getRole());
-    }
+
 }
